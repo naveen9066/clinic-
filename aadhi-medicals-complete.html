@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ஆதி மெடிக்கல்ஸ் - கிராமப்புற மக்களுக்கான நம்பகமான மருந்தகம்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600;700&family=Mukta+Malar:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00a86b;
+            --secondary-color: #0d7377;
+            --accent-color: #ff6b35;
+            --light-bg: #f0f9f6;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --border-color: #d4edda;
+            --shadow: 0 4px 15px rgba(0, 168, 107, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 168, 107, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Madurai', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .top-bar {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.8rem 0;
+            font-size: 0.95rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-header {
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text h1 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo-text p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0.8rem 0;
+            gap: 0.5rem;
+        }
+
+        .nav-menu li a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.05), rgba(13, 115, 119, 0.05));
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 2.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Mukta Malar', sans-serif;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 168, 107, 0.3);
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 168, 107, 0.4);
+        }
+
+        .cta-btn-secondary {
+            background: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-btn-secondary:hover {
+            background: #e65a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Mukta Malar', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section - Doctor Details */
+        .about {
+            background: var(--white);
+        }
+
+        .doctor-profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doctor-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .doctor-info h3 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .doctor-info .designation {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .doctor-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .detail-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .detail-content h4 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .detail-content p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-cta {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: 'Mukta Malar', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .service-cta:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Medicine Pages */
+        .medicines {
+            background: var(--white);
+        }
+
+        .medicine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .medicine-card {
+            background: linear-gradient(135deg, var(--white), var(--light-bg));
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .medicine-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .medicine-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .medicine-card h4 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .medicine-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .medicine-card li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .medicine-card li:last-child {
+            border-bottom: none;
+        }
+
+        .medicine-card li::before {
+            content: '💊';
+            margin-right: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.05), rgba(13, 115, 119, 0.05));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h5 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .why-item:hover {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transform: scale(1.05);
+        }
+
+        .why-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-item h4 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .why-item p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: var(--light-bg);
+        }
+
+        .reviews-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .rating {
+            color: #ffa500;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--white);
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Mukta Malar', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li::before {
+            content: '→';
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom p {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-heart {
+            color: var(--accent-color);
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        /* Emergency Button */
+        .emergency-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            border: none;
+            font-family: 'Mukta Malar', sans-serif;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .emergency-btn:hover {
+            background: #e65a2a;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .doctor-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .doctor-image {
+                margin: 0 auto;
+                max-width: 250px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-menu li a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-item">
+                    <span>📞</span>
+                    <span>9688454611</span>
+                </div>
+                <div class="top-bar-item">
+                    <span>⏰</span>
+                    <span>மாலை 6:00 - இரவு 9:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <div class="logo-icon">⚕️</div>
+                        <div class="logo-text">
+                            <h1>ஆதி மெடிக்கல்ஸ்</h1>
+                            <p>உங்கள் நம்பிக்கையான மருந்தகம்</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">முகப்பு</a></li>
+                <li><a href="#about">மருத்துவர்</a></li>
+                <li><a href="#services">சேவைகள்</a></li>
+                <li><a href="#medicines">மருந்துகள்</a></li>
+                <li><a href="#testimonials">கருத்துகள்</a></li>
+                <li><a href="#reviews">விமர்சனங்கள்</a></li>
+                <li><a href="#location">இடம்</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>கிராமப்புற மக்களுக்கான<br>தரமான மருந்து சேவை</h2>
+            <p>உங்கள் <span class="highlight">ஆரோக்கியம்</span> எங்கள் முதன்மை குறிக்கோள். சரியான விலையில் தரமான மருந்துகள்.</p>
+            <div class="cta-buttons">
+                <a href="#medicines" class="cta-btn cta-btn-primary">மருந்துகள் பார்க்க</a>
+                <a href="9688454611" class="cta-btn cta-btn-secondary">இப்போது அழைக்கவும்</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Doctor Details -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">எங்கள் மருத்துவர்</h2>
+            <div class="doctor-profile">
+                <div class="doctor-image">
+                    👨‍⚕️
+                </div>
+                <div class="doctor-info">
+                    <h3>Dr.B.சதீஸ் குமார்</h3>
+                    <p class="designation">பதிவு செய்யப்பட்ட மருத்துவர்</p>
+                    
+                    <div class="doctor-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">🎓</div>
+                            <div class="detail-content">
+                                <h4>கல்வித் தகுதி</h4>
+                                <p>MBBS.,MS.,DNB(Gen Surgery)., FIAGES<br>அரசு மருத்துவர்</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">💼</div>
+                            <div class="detail-content">
+                                <h4>அனுபவம்</h4>
+                                <p>5+ வருடங்கள் கிராமப்புற சுகாதார சேவையில்<br>500+ நோயாளிகளுக்கு சிகிச்சை அளித்துள்ளார்</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">🏆</div>
+                            <div class="detail-content">
+                                <h4>சிறப்பு</h4>
+                                <p>நாட்பட்ட நோய்கள் மேலாண்மை, குழந்தை பராமரிப்பு,<br>முதியோர் மருந்து ஆலோசனை</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">எங்கள் சேவைகள்</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>மருந்து வாங்குதல்</h3>
+                    <p>அனைத்து வகையான மருந்துகளும் கிடைக்கும். மருத்துவர் பரிந்துரை அடிப்படையில் வழங்கப்படும். தரமான மருந்துகள் மட்டுமே விற்பனை.</p>
+                    <button class="service-cta" onclick="window.location.href='#medicines'">மருந்துகள் பார்க்க</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>இலவச ஆலோசனை</h3>
+                    <p>அனுபவம் வாய்ந்த மருந்தாளர் மூலம் இலவச மருந்து ஆலோசனை. மருந்துகளின் பயன்பாடு மற்றும் பக்க விளைவுகள் பற்றிய விளக்கம்.</p>
+                    <button class="service-cta" onclick="alert('அழைக்க: 9688454611')">இப்போது அழைக்கவும்</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🩸</div>
+                    <h3>BP & சர்க்கரை பரிசோதனை</h3>
+                    <p>இரத்த அழுத்தம் மற்றும் சர்க்கரை அளவு பரிசோதனை முற்றிலும் இலவசம். உடனடி முடிவுகள் மற்றும் ஆலோசனை.</p>
+                    <button class="service-cta" onclick="alert('பரிசோதனை நேரம்: காலை 8-10 & மாலை 5-7')">நேரம் அறிய</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>எளிய கட்டணம்</h3>
+                    <p>ரொக்கம், UPI, கார்டு, Google Pay, PhonePe, Paytm என அனைத்து வகை கட்டண முறைகளும் ஏற்கப்படும். சுலபமான பரிவர்த்தனை.</p>
+                    <button class="service-cta" onclick="alert('கட்டண முறைகள்: ரொக்கம், UPI, கார்டு')">மேலும் அறிய</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medicines Section -->
+    <section id="medicines" class="medicines">
+        <div class="container">
+            <h2 class="section-title">கிடைக்கும் மருந்துகள்</h2>
+            <div class="medicine-grid">
+                <div class="medicine-card">
+                    <div class="medicine-icon">🤒</div>
+                    <h4>பொது மருந்துகள்</h4>
+                    <ul>
+                        <li>காய்ச்சல் மருந்துகள் (பாராசிட்டமால்)</li>
+                        <li>சளி & இருமல் மருந்துகள்</li>
+                        <li>வயிற்று வலி மருந்துகள்</li>
+                        <li>தலைவலி மருந்துகள்</li>
+                        <li>வாந்தி மருந்துகள்</li>
+                        <li>மலச்சிக்கல் மருந்துகள்</li>
+                    </ul>
+                </div>
+
+                <div class="medicine-card">
+                    <div class="medicine-icon">💊</div>
+                    <h4>நாட்பட்ட நோய் மருந்துகள்</h4>
+                    <ul>
+                        <li>சர்க்கரை நோய் மருந்துகள்</li>
+                        <li>இரத்த அழுத்த மருந்துகள்</li>
+                        <li>இதய நோய் மருந்துகள்</li>
+                        <li>தைராய்டு மருந்துகள்</li>
+                        <li>கொலஸ்ட்ரால் மருந்துகள்</li>
+                        <li>ஆஸ்துமா மருந்துகள்</li>
+                    </ul>
+                </div>
+
+                <div class="medicine-card">
+                    <div class="medicine-icon">👶</div>
+                    <h4>குழந்தைகள் மருந்துகள்</h4>
+                    <ul>
+                        <li>குழந்தை காய்ச்சல் மருந்து</li>
+                        <li>சளி சிரப்</li>
+                        <li>வயிற்றுப்போக்கு மருந்து</li>
+                        <li>வைட்டமின் சொட்டுகள்</li>
+                        <li>கால்சியம் சிரப்</li>
+                        <li>குழந்தை சுகாதார பொருட்கள்</li>
+                    </ul>
+                </div>
+
+                <div class="medicine-card">
+                    <div class="medicine-icon">🧴</div>
+                    <h4>சுகாதார பொருட்கள்</h4>
+                    <ul>
+                        <li>கிருமிநாசினி (சானிடைசர்)</li>
+                        <li>கட்டு பொருட்கள்</li>
+                        <li>முதலுதவி பெட்டி</li>
+                        <li>மாஸ்க்குகள்</li>
+                        <li>டெட்டால் சோப் & திரவம்</li>
+                        <li>காயம் சுத்தம் பொருட்கள்</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2 class="section-title">ஏன் ஆதி மெடிக்கல்ஸ் சிறந்தது?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">✅</div>
+                    <h4>100% தரமான மருந்துகள்</h4>
+                    <p>அரசு அங்கீகாரம் பெற்ற நிறுவனங்களிலிருந்து மட்டுமே மருந்துகள்</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💰</div>
+                    <h4>நியாயமான விலை</h4>
+                    <p>MRP விலையில் மருந்துகள். கூடுதல் கட்டணம் இல்லை</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">👨‍⚕️</div>
+                    <h4>அனுபவமிக்க மருத்துவர்</h4>
+                    <p>2+ வருட அனுபவம் கொண்ட பதிவு செய்யப்பட்ட மருந்தாளர்</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">⏰</div>
+                    <h4>நீண்ட நேர சேவை</h4>
+                    <p>மாலை 6 முதல் இரவு 9 வரை திறந்திருக்கும்</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🆓</div>
+                    <h4>இலவச சேவைகள்</h4>
+                    <p>BP, சர்க்கரை பரிசோதனை & மருந்து ஆலோசனை இலவசம்</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🌾</div>
+                    <h4>கிராமப்புற நட்பு</h4>
+                    <p>தமிழில் எளிய விளக்கங்கள் மற்றும் பொறுமையான சேவை</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🏆</div>
+                    <h4>2+ வருட நம்பிக்கை</h4>
+                    <p>கிராம மக்களின் நம்பிக்கையான மருந்தகம்</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">📍</div>
+                    <h4>எளிய அணுகல்</h4>
+                    <p>அரசு மேல்நிலைப்பள்ளி அருகில்  அமைந்துள்ளது</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">மக்கள் கருத்துகள்</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        ஆதி மெடிக்கல்ஸ் என் குடும்பத்தின் நம்பிக்கையான மருந்தகம். மருத்துவர் மிகவும் பொறுமையாக விளக்குகிறார். இலவச BP பரிசோதனை மிகவும் பயனுள்ளதாக உள்ளது.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ம</div>
+                        <div class="author-info">
+                            <h5>முருகன் </h5>
+                            <p>விவசாயி, சுண்டக்கம் பாளையம்</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        எங்கள் கிராமத்தில் இப்படி ஒரு நல்ல மருந்தகம் இருப்பது பெருமை. தரமான மருந்துகள் சரியான விலையில். மருத்துவர் தமிழில் நன்றாக விளக்குகிறார்.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ல</div>
+                        <div class="author-info">
+                            <h5>லட்சுமி</h5>
+                            <p>சைக்கிள் கடை, சுண்டக்கம் பாளையம்</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        என் தந்தைக்கு சர்க்கரை நோய். ஒவ்வொரு மாதமும் இங்கு வந்து மருந்து வாங்குகிறோம். இலவச சர்க்கரை பரிசோதனை மற்றும் ஆலோசனை மிக பயனுள்ளதாக இருக்கிறது.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ர</div>
+                        <div class="author-info">
+                            <h5>ரமேஷ் </h5>
+                            <p>கே.என். பேக்கரி, சுண்டக்கம் பாளையம் </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        குழந்தைகளுக்கான மருந்துகள் எப்போதும் கிடைக்கும். மருத்துவர் குழந்தைகள் மீது மிகுந்த அக்கறை காட்டுகிறார். விலையும் மிகவும் நியாயமானது.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">க</div>
+                        <div class="author-info">
+                            <h5>கமலா </h5>
+                            <p>இல்லத்தரசி, நாகரனை</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        அவசர நேரத்தில் இரவு 9 மணிக்கு வந்தேன். கடை திறந்திருந்தது. மருத்துவர் நன்றாக ஆலோசனை கொடுத்தார். இந்த சேவைக்கு மிக்க நன்றி.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">அ</div>
+                        <div class="author-info">
+                            <h5>நவீன்</h5>
+                            <p>பட்டதாரி, தொட்டிபாளையம்</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        UPI பேமெண்ட் வசதி இருப்பது மிகவும் நல்லது. காலாவதி ஆகாத மருந்துகள் மட்டுமே கொடுக்கிறார்கள். நம்பகமான சேவை.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">வ</div>
+                        <div class="author-info">
+                            <h5>வெங்கடேஷ்</h5>
+                            <p>வியாபாரி, சிட்டாம்பாளையம்</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">வாடிக்கையாளர் விமர்சனங்கள்</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">சுப்பிரமணியம்</span>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">
+                        மிகவும் நல்ல சேவை. மருத்துவர் மிகவும் அனுபவமானவர். ஒவ்வொரு மருந்தின் பயன்பாடும் தமிழில் நன்றாக விளக்குகிறார். என்னுடைய தந்தைக்கு இரத்த அழுத்தம் பிரச்சனை. ஒவ்வொரு வாரமும் இலவச பரிசோதனை செய்கிறோம். 
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">மீனாட்சி சுந்தரம்</span>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">
+                        விலை மிகவும் நியாயம். பெரிய நகரத்தில் இருப்பதை விட இங்கு சிறப்பான சேவை. Google Pay மூலம் கட்டணம் செலுத்த முடிகிறது. மருந்துகளின் காலாவதி தேதியை கட்டாயம் காண்பிக்கிறார்கள்.
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">கண்ணன்</span>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">
+                        எனக்கு சர்க்கரை நோய் உள்ளது. கடந்த 5 வருடங்களாக இங்குதான் மருந்து வாங்குகிறேன். மருத்துவர் உணவு கட்டுப்பாடு பற்றியும் நல்ல ஆலோசனை தருகிறார். இலவச சர்க்கரை பரிசோதனை மிகவும் உதவியாக உள்ளது.
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">பாலாஜி மற்றும் பிரியா</span>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">
+                        எங்கள் குழந்தைக்கு தடுப்பூசி போட வேண்டும் என்று சொன்னபோது சரியான இடத்தைப் பரிந்துரைத்தார். குழந்தைகளுக்கான மருந்துகள் எப்போதும் கிடைக்கும். மிகவும் பாதுகாப்பானது.
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">செல்வராஜ்</span>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="review-text">
+                        நீண்ட நேரம் திறந்திருப்பது மிகப்பெரிய உதவி. இரவு நேர அவசரத்திற்கு மிகவும் பயனுள்ளதாக உள்ளது. மருத்துவர் எப்போதும் கடையில் இருக்கிறார். நம்பகமான சேவை. 10/10 மதிப்பீடு.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="location" class="map-section">
+        <div class="container">
+            <h2 class="section-title">எங்கள் இடம்</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem;">
+                📍 ஆதி மெடிக்கல்ஸ், அரசு மேல்நிலைப்பள்ளி அருகில், சுண்டக்கம் பாளையம் - 638 402.
+            </p>
+            <div class="map-container">
+                <!-- Replace the src with your actual Google Maps embed URL -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.657140861199!2d77.25518327440562!3d11.416985447053271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba91f6677955939%3A0xa6976c5d3a8f2a40!2sAadhi%20Medicals!5e1!3m2!1sen!2sin!4v1771169224045!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://goo.gl/maps/your-location" target="_blank" class="cta-btn cta-btn-primary">
+                    Google Maps இல் திறக்க
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ஆதி மெடிக்கல்ஸ்</h3>
+                    <p>கிராமப்புற மக்களுக்கான நம்பகமான மருந்தகம். தரமான மருந்துகள், நியாயமான விலை, இலவச ஆலோசனை.</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>📞 தொலைபேசி:</strong> +91 96884 54611<br>
+                       
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>விரைவு இணைப்புகள்</h3>
+                    <ul>
+                        <li><a href="#home" style="color: white; text-decoration: none;">முகப்பு</a></li>
+                        <li><a href="#about" style="color: white; text-decoration: none;">மருத்துவர்</a></li>
+                        <li><a href="#services" style="color: white; text-decoration: none;">சேவைகள்</a></li>
+                        <li><a href="#medicines" style="color: white; text-decoration: none;">மருந்துகள்</a></li>
+                        <li><a href="#testimonials" style="color: white; text-decoration: none;">கருத்துகள்</a></li>
+                        <li><a href="#location" style="color: white; text-decoration: none;">இடம்</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>திறக்கும் நேரம்</h3>
+                    <ul>
+                        <li>திங்கள் - ஞாயிறு: மாலை 6:00 - இரவு 9:00</li>
+                        <li>அவசர சேவை: 24x7 அழைப்பு</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>முகவரி</h3>
+                    <p>
+                        ஆதி மெடிக்கல்ஸ்<br>
+                        அரசு மேல்நிலைப்பள்ளி அருகில்<br>
+                        சுண்டக்கம் பாளையம் - 638 402<br>
+                        கூடக்கரை, நம்பியூர்.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 ஆதி மெடிக்கல்ஸ். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+                <p>கிராமப்புற மக்களின் ஆரோக்கியத்திற்காக <span class="footer-heart">❤️</span> உடன் உருவாக்கப்பட்டது</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Emergency Button -->
+    <button class="emergency-btn" onclick="window.location.href='tel:9688454611'">
+        🚨 அவசர அழைப்பு
+    </button>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
